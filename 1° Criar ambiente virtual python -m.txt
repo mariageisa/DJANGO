@@ -1,0 +1,18 @@
+1° Criar ambiente virtual: python -m virtualenv .
+2° Ativar o ambiente virtual: Scripts/activate
+3° instalar o DJANGO no ambiente virtual: pip install django
+4° Criar o CORE do projeto: django-admin startproject core .
+5° Alterar no arquivo SETTINGS.PY a opção: LANGUAGE_CODE = 'pt-br' e a opção TIME_ZONE = 'America/Fortaleza'
+6° Validar se o serviço está OK com o comando: python manage.py runserver 8000
+7° No seu navegar acesse: http://localhost:8000/
+8° Apos validar o serviço saia e execute o comando de migrações do DJANGO: python manage.py migrate
+9° para acessar o ambiente de administração do DJANGO use: http://localhost:8000/admin
+10° agora devemos criar o usuário de acesso do ambiente de administração: python .\manage.py createsuperuser
+11° criar o app: python .\manage.py startpapp nome_do_APP
+12° adicionar o APP no arquivo SETINGS.PY: INSTALLED_APPS
+13° adicionar a rota do meu arquivo URLS.PY no CORE: path('', include('nome_do_APP.urls')),
+14° conectar o meu arquivo URLS.PY do APP com a VIEW
+
+obs: não esqueça de deletar o .gitignore dos ambientes
+obs: não esqueça de desativar os ambientes virtuais anteriores:
+Scripts/deactivate
