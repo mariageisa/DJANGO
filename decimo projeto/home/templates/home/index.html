@@ -1,0 +1,79 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+
+      *{
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+        header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #B22222;
+          color: white;
+          padding: 10px; 
+          text-align: center;
+        }
+
+        #logo {
+          max-width: 100px;
+      }
+
+        a {
+            color: blue;
+            text-decoration: none;
+            padding-left: 6%;
+
+          }
+          a:hover {
+            color: red;
+            border-bottom: 1px solid red;
+          }
+          footer {
+            background-color: #289;
+            color: white;
+            padding: 20px;
+            text-align: center;   
+            bottom: 0;
+            width: 100%;
+          }
+      
+      </style>
+</head>
+
+<body>
+  <header>
+    <div >
+      <img id="logo" src="{% static "home/images/logo.png" %}" alt="Logo">
+  </div>
+  <div style="width: 300px; display: flex; justify-content: start">
+  <a href="{% url 'contato' %}">Contato</a>
+  <a href="{% url 'produtos' %}">Produto</a>
+  </div>
+</header>
+
+<div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <img width="100%" height="400px" src="{% static "home/images/home.jpg" %}">
+    </div> 
+</div>
+
+{% for dado in dados %}
+<div>
+   <h3>Nome do produto: {{ dado.nome_produto }}</h3>
+</div>
+ {% endfor %} 
+
+<footer>
+    <p>Amontada valley 2024</p>
+  </footer>
+</body>
+</html>

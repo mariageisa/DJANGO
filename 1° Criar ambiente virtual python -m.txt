@@ -15,4 +15,6 @@
 
 obs: não esqueça de deletar o .gitignore dos ambientes
 obs: não esqueça de desativar os ambientes virtuais anteriores:
-Scripts/deactivate
+Scripts/deactivate 
+
+django(forms)

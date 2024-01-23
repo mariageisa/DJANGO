@@ -1,0 +1,43 @@
+
+{% load static %}  
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device, initial-scale=1.0">
+    <title>Livaria Amontada Valley</title>
+</head>
+<body background="{% static 'home/images/fundo.png'%}">
+    <div style="width: 900px; margin: 20px auto"> 
+        <img width="110" src="{% static "home/images/logo.png" %}">
+        <a href="#" style= "margin-left: 50%">Home</a>  |
+        <a href="#">Quem Somos</a>  |
+        <a href="#">Contato</a>
+    </div>
+
+    <div style="width: 900px; margin: -8px auto">
+        <div style="display: flex; align-items: center; justify-content: center;">
+    <img width="690" height="410px" src="{% static "home/images/capa.png" %}">
+        </div>
+   </div>
+
+   <div style="width: 900px; margin: -8px auto; ">
+
+       {%for Livro in livros%}
+       <div style="width: 250px; display: inline-block">
+          <h3>Nome do livro: {{Livro.nome_livro}}</h3>
+          <p>Ano da publicação: {{Livro.ano_da_pub}}</p>
+          <p>Quantidade de paginas: {{Livro.qtd_de_pgn}}</p>
+          <p>Nome do Autor:{{Livro.nome_do_autor}}</p>
+          <p>Nome da Editora:{{Livro.nome_da_editora}}</p>
+          <p>Preco:{{Livro.preco}}</p>
+          <hr>
+          <span>{{produto.preco}}</span>
+          <a href="#">Saiba Mais</a>
+        </div>
+        {% endfor %} 
+
+</div>
+
+</body>
+</html>
